@@ -9,5 +9,4 @@ public class ConsidApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConsidApplication.class, args);
     }
-
 }
