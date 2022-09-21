@@ -1,6 +1,6 @@
 package com.example.consid.services;
 
-import com.example.consid.models.LibraryItem;
+import com.example.consid.models.entities.LibraryItem;
 import com.example.consid.repositories.LibraryItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

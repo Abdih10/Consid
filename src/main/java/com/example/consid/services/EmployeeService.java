@@ -1,6 +1,6 @@
 package com.example.consid.services;
 
-import com.example.consid.models.Employee;
+import com.example.consid.models.entities.Employee;
 import com.example.consid.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,6 @@
-package com.example.consid.models;
+package com.example.consid.models.entities;
 
+import com.example.consid.models.entities.Category;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
