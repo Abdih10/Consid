@@ -2,7 +2,6 @@ package com.example.consid.rest;
 
 import com.example.consid.models.dto.CategoryCreationDto;
 import com.example.consid.models.dto.CategoryDto;
-import com.example.consid.models.entities.Category;
 import com.example.consid.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -20,10 +19,16 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
+    /**
+     * Find a list of all categories
+     *
+     * @return list
+     */
     @GetMapping(path = "/categories", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<CategoryDto> allCategories() {
         return categoryService.findAllCategories();
     }
+
     /**
      * Find category by id
      *
@@ -31,7 +36,7 @@ public class CategoryController {
      * @return category dto
      */
     @GetMapping(path = "categories", params = {"id"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public CategoryDto findCategoryById(@RequestParam (name = "id") Integer categoryId) {
+    public CategoryDto findCategoryById(@RequestParam(name = "id") Integer categoryId) {
         return categoryService.findCategoryById(categoryId);
     }
 
@@ -44,13 +49,17 @@ public class CategoryController {
     }
 
     /**
-     *  Edit Categories
+     * Edit Categories
      */
-
+    @PutMapping(value = "categories/{category_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public CategoryDto editCategory(@PathVariable(name = "category_id") Integer categoryId, @RequestBody CategoryCreationDto createDto) {
+        return categoryService.editCategory(categoryId, createDto);
+    }
 
     /**
      * Delete Categories (if they are not referenced in any library item)
      */
+
     /**
      * Delete a category
      *

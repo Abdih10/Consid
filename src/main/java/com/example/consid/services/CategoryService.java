@@ -20,6 +20,19 @@ public class CategoryService {
     }
 
     /**
+     * Converts Entity to Dto
+     *
+     * @param category the category to convert
+     * @return CategoryDto
+     */
+    private static CategoryDto toDto(Category category) {
+        return CategoryDto.builder()
+                .id(category.getId())
+                .name(category.getCategoryName())
+                .build();
+    }
+
+    /**
      * Find all categories
      *
      * @return list of all categories
@@ -38,12 +51,32 @@ public class CategoryService {
         return toDto(category);
     }
 
+    /**
+     * Creates a new category
+     *
+     * @param
+     * @return categoryDto
+     */
     public CategoryDto createCategory(CategoryCreationDto createDto) {
-           Category category = new Category();
-            category.setCategoryName(createDto.getName());
-            categoryRepository.save(category);
-            return new CategoryDto(category);
+        Category category = new Category();
+        category.setCategoryName(createDto.getName());
+        categoryRepository.save(category);
+        return new CategoryDto(category);
     }
+
+    /**
+     * Updates given category with the fields in dto
+     *
+     * @param categoryId id of category which should be updated
+     * @return Dto
+     */
+    public CategoryDto editCategory(Integer categoryId, CategoryCreationDto createDto) {
+        Category category = categoryRepository.findById(categoryId).orElseThrow(RuntimeException::new);
+        category.setCategoryName(createDto.getName());
+        categoryRepository.save(category);
+        return new CategoryDto(category);
+    }
+
     /**
      * Delete a category
      *
@@ -53,12 +86,5 @@ public class CategoryService {
     public void deleteCategoryById(Integer id) {
         Category category = categoryRepository.findById(id).orElseThrow(RuntimeException::new);
         categoryRepository.delete(category);
-    }
-
-    private static CategoryDto toDto(Category category) {
-        return CategoryDto.builder()
-                .id(category.getId())
-                .name(category.getCategoryName())
-                .build();
     }
 }
