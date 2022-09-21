@@ -1,7 +1,7 @@
 package com.example.consid.services;
 
-import com.example.consid.models.dto.CategoryCreationDto;
-import com.example.consid.models.dto.CategoryDto;
+import com.example.consid.models.dto.creation.CategoryCreationDto;
+import com.example.consid.models.dto.response.CategoryDto;
 import com.example.consid.models.entities.Category;
 import com.example.consid.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
