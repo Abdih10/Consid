@@ -1,9 +1,6 @@
-package com.example.consid.models;
+package com.example.consid.models.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,13 +8,14 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
+@Builder
 @Getter
 @Entity
 @Table(name = "Category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Integer id;
 
     @Column(length = 50, nullable = false)
     private String CategoryName;

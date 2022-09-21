@@ -1,6 +1,6 @@
 package com.example.consid.repositories;
 
-import com.example.consid.models.LibraryItem;
+import com.example.consid.models.entities.LibraryItem;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
