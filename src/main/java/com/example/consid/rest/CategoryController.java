@@ -1,7 +1,7 @@
 package com.example.consid.rest;
 
-import com.example.consid.models.dto.CategoryCreationDto;
-import com.example.consid.models.dto.CategoryDto;
+import com.example.consid.models.dto.creation.CategoryCreationDto;
+import com.example.consid.models.dto.response.CategoryDto;
 import com.example.consid.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

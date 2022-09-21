@@ -1,4 +1,4 @@
-package com.example.consid.models.dto;
+package com.example.consid.models.dto.response;
 
 import com.example.consid.models.entities.Category;
 import lombok.AllArgsConstructor;

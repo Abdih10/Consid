@@ -1,4 +1,4 @@
-package com.example.consid.models.dto;
+package com.example.consid.models.dto.creation;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
